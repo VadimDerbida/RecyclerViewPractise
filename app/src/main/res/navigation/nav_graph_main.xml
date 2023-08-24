@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/fragmentFeed">
+
+    <fragment
+        android:id="@+id/fragmentFeed"
+        android:name="com.example.homework4_5.presentation.FeedFragment"
+        android:label="FragmentFeed"
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_fragmentFeed_to_commentFragment"
+            app:destination="@id/commentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="com.example.homework4_5.presentation.CommentFragment"
+        android:label="CommentFragment">
+        <argument
+            android:name="post"
+            app:argType="com.example.homework4_5.domain.model.FeedPost">
+        </argument>
+
+    </fragment>
+</navigation>
